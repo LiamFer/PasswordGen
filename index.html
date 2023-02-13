@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Password Generator">
+    <link rel="stylesheet" href="style.css">
+    <title>PassGen</title>
+</head>
+<body>
+    <h1 id="title">Password Gen</h1>
+
+<main class="container-input">
+    <span>Tamanho <span id="valor"></span> Caracteres</span>
+    <input type="range" id="slide" class="slider" min="6" max="15" value="12">
+
+    <button id="button" class="cta">Generate Password</button>
+</main>
+
+<div id="container-pass" class="container-pass hide">
+    <span class="passwordtitle">Your Generated Password is:</span>
+    <span id="password" class="password">asdasdas</span>
+    <span class="tooltip">Copy</span>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
