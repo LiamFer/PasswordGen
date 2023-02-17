@@ -12,15 +12,15 @@
     <h1 id="title">Password Gen</h1>
 
 <main class="container-input">
-    <span>Tamanho <span id="valor"></span> Caracteres</span>
-    <input type="range" id="slide" class="slider" min="6" max="15" value="12">
+    <span>Tamanho <span id="value"></span> Caracteres</span>
+    <input type="range" id="slider" class="slider" min="6" max="15" value="12">
 
-    <button id="button" class="cta">Generate Password</button>
+    <button id="button" class="cta" onclick="generator()">Generate Password</button>
 </main>
 
-<div id="container-pass" class="container-pass hide">
+<div id="container-pass" class="container-pass hide" onclick="copy()">
     <span class="passwordtitle">Your Generated Password is:</span>
-    <span id="password" class="password">asdasdas</span>
+    <span id="password" class="password"></span>
     <span class="tooltip">Copy</span>
 </div>
 
