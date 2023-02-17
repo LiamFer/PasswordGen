@@ -74,7 +74,7 @@ h1{
     font-size: 1.4em;
 }
 
-#container-pass{
+.container-pass{
     max-width: 480px;
     margin: 14px 0;
     display: flex;
@@ -124,4 +124,8 @@ h1{
     visibility:visible;
     bottom: 50px;
     opacity:1;
+}
+
+.hide{
+    display: none;
 }
