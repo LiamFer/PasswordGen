@@ -1,4 +1,4 @@
-import check, { reset} from "./increase.js";
+import check, { reset } from "./increase.js";
 
 let uppercaseText = "QWERTYUIOPASDFGHJKLÇZXCVBNM";
 let lowercaseText = "qwertyuiopasdfghjklçzxcvbnm";
@@ -43,6 +43,10 @@ document.getElementById("generateBtn").addEventListener("click", () => {
     }
   }
 
+  if (combination === "") {
+    return;
+  }
+
   for (let i = 0; i < inputRange.value; i++) {
     let index = Math.floor(Math.random() * combination.length);
     password += combination[index];
@@ -54,10 +58,6 @@ document.getElementById("generateBtn").addEventListener("click", () => {
   document.getElementById("passLevel").innerText = "low";
 });
 
-document.getElementById('generateBtn').addEventListener('click',() =>{
-navigator.clipboard.writeText(document.getElementById('passwordText').value)
-})
-
-
-
-
+document.getElementById("generateBtn").addEventListener("click", () => {
+  navigator.clipboard.writeText(document.getElementById("passwordText").value);
+});
