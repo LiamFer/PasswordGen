@@ -152,6 +152,10 @@ input[type="checkbox"] {
   gap: 10px;
 }
 
+#passLevel {
+  text-transform: uppercase;
+}
+
 .strengthLevel {
   width: 25%;
   height: 100%;
