@@ -1,141 +1,202 @@
 @charset "UTF-8";
 
-@font-face{
-    font-family: 'title';
-    src: url(fonts/Pixeled.ttf) format('truetype');
+:root {
+  --color1: #202124;
+  --color2: #161618;
+  --color3: rgb(238, 253, 24);
+  --text-color: aliceblue;
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'century gothic', monospace;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "century gothic", monospace;
+  box-sizing: border-box;
+  font-family: monospace;
 }
 
-body{
-    background-image: linear-gradient(55deg,#f85032,#e73827);
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+body {
+  background-color: var(--color2);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1{
-    max-width: 650px;
-    margin: 0px 0px 25px 0px;
+main {
+  color: var(--text-color);
+  width: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  gap: 10px;
 }
 
-#title{
-    font-family: 'title';
-    color: rgb(255, 255, 255);
-    font-size: 3em;
+#copyBox,
+#configBox {
+  background-color: var(--color1);
+  padding: 15px;
 }
 
-.container-input{
-    max-width: 470px;
-    margin: 15px 0px;
-    text-align: center;
+/* Box onde mostra o password gerado e o botão de copiar */
+
+#copyBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.container-input span{
-    color: white;
-    font-size: 29px;
+#passwordText {
+  background-color: var(--color1);
+  border: none;
+  outline: none;
+  font-size: 2.5em;
+  color: var(--text-color);
 }
 
-.slider{
-    -webkit-appearance:none;
-    width: 100%;
-    border-radius: 10px;
-    background: white;
-    height: 1.2em;
-    outline: none;
-    margin: 10px 0px;
-    cursor: grab;
+#copyButton {
+  fill: var(--color2);
+  height: 30px;
+  width: fit-content;
+  padding-left: 30px;
+  transition: 0.2s all;
+  cursor: pointer;
 }
 
-.slider:active{
-    cursor: grabbing;
+#copyButton:hover {
+  fill: var(--color3);
 }
 
-.cta{
-    cursor: pointer;
-    height: 45px;
-    background-color:rgb(18, 168, 206) ;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 40px;
-    color: rgb(255, 255, 255);
-    text-shadow: 0px 0px 5px black;
-    font-weight: bold;
-    font-size: 1.4em;
-    transition: all .5s ease-in-out;
-    
-    
+/* Box das configurações para gerar o password */
+
+#configBox {
+  height: 370px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.cta:hover{
-    background-color:lawngreen ;
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.404);
+#lengthBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.container-pass{
-    max-width: 480px;
-    margin: 14px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
+#lengthBox > span {
+  font-size: 2em;
 }
 
-.passwordtitle{
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 24px 0px 10px 0px;
-    color: white;
-    
+#lengthBox > h3 {
+  font-size: 1.3em;
 }
 
-.password{
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.685);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    transition: transform 0.5s;
+#checkboxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
-.password:hover{
-    transform: scale(1.05);
+#checkboxes span {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  font-size: 1.3em;
 }
 
-.tooltip{
-    color: rgb(0, 0, 0);
-    position: relative;
-    top: 20px;
-    padding: 6px 8px;
-    background-color: rgba(255, 255, 255, 0.685);
-    text-align: center;
-    font-size: 16px;
-    border-radius: 6px;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
+#passSize,
+input[type="checkbox"] {
+  accent-color: var(--color3);
 }
 
-#container-pass:hover .tooltip{
-    visibility:visible;
-    bottom: 50px;
-    opacity:1;
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
 }
 
-.hide{
-    display: none;
+/* Box do display da força do password */
+
+#strengthBox {
+  background-color: var(--color2);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#strengthBox > h3 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #4d4d4d;
+}
+
+#strengthBox span {
+  font-size: 20px;
+}
+
+#strengthBox div {
+  display: flex;
+  gap: 10px;
+  width: 50%;
+}
+
+#strengthLevels {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.strengthLevel {
+  width: 25%;
+  height: 100%;
+  border: 1px solid aliceblue;
+}
+
+.increaseStrength {
+  background-color: var(--color3);
+  border: none;
+}
+
+/* Botão de gerar password */
+
+#generateBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--color3);
+  padding: 15px;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: var(--color3);
+  gap: 20px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+#generateBtn svg {
+  fill: var(--color3);
+  width: 25px;
+}
+
+#generateBtn:hover {
+  background-color: var(--color3);
+  color: var(--color1);
+}
+
+#generateBtn:hover svg {
+  fill: var(--color1);
+}
+
+@media screen and (max-width: 490px) {
+  #passwordText {
+    font-size: 1.6em;
+  }
 }
