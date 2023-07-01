@@ -55,6 +55,7 @@ document.getElementById("generateBtn").addEventListener("click", () => {
   document.getElementById("passwordText").value = password;
   configs = [false, false, false, false];
   reset(strengthPower, checkboxes);
+  combination = "";
   document.getElementById("passLevel").innerText = "low";
 });
 
